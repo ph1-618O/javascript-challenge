@@ -22,20 +22,43 @@ function buildTable(data){
 });
 };
 
+
+// function filterTable(element){
+//     console.log("Button Clicked")
+//     const value = d3.select('#filter').property('value');
+//     console.log(value);
+//     const filterAliens = data.filter((alien)=> {
+//     alien.datetime.includes(value);
+//     });
+//     buildTable(filterAliens);}
+
+
+
 function filterTable(element){
     console.log("Button Clicked")
     const value = d3.select('#filter').property('value');
     console.log(value);
-    const filterAliens = data.filter((alien)=> {
+    const filterAliens = data.filter(alien=> 
     alien.datetime.includes(value)||
-    alien.city.includes(value); //||
-    // alien.state.includes(value) ||
-//     alien.country.includes(value) ||
-//     alien.shape.includes(value) ||
-//     alien.durationMinutes.includes(value) ||
-//     alien.comments.includes(value);
-    });
+    alien.city.includes(value)||
+    alien.state.includes(value)||
+    alien.country.includes(value)||
+    alien.shape.includes(value));//||
+//     alien.durationMinutes.includes(value)||
+//     alien.comments.includes(value));
     buildTable(filterAliens);}
+
+
+
+//getDurationMinues = data.filter((minute) => minute.durationMinutes)
+
+// function filterTable(e) {
+//   console.log('Button Clicked')
+//   const value = d3.select('#filter').property('value');
+//   console.log(value);
+//   const filterAliens = data.filter((info) => info.datetime.includes(value) || info.city.includes(value));
+//   buildTable(filterAliens);
+// }
 
 d3.select('#filter').on('keyup', filterTable);
 
