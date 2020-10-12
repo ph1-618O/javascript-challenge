@@ -107,11 +107,13 @@ select {
 .hero h1 {
   margin-top: 200px;
   font-size: 0.1rem;
+  font-family: Arial;
   animation: title 1.2s forwards linear;
 }
 
 .hero p {
   font-size: 2rem;
+  font-family: Arial;
   opacity: 0;
   animation: subtitle 1.2s forwards linear;
   animation-delay: 1.2s;
